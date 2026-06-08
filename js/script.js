@@ -1336,6 +1336,7 @@ function init() {
   initEduFilters();
   initCarousel();
   initVideo();
+  initVideoCards();
 
   // Renderiza o histórico inicial (caso já exista no localStorage)
   renderHistory();
@@ -1440,6 +1441,28 @@ function initCarousel() {
 /* ================================================================
    14. VÍDEO — thumbnail clicável que carrega o iframe
    ================================================================ */
+
+/**
+ * Inicializa os cards de vídeos relacionados.
+ * Abre o link do YouTube em nova aba ao clicar ou pressionar Enter/Espaço.
+ * Usa data-video-url para manter o HTML livre de JS inline.
+ */
+function initVideoCards() {
+  const cards = document.querySelectorAll(".video-card[data-video-url]");
+  cards.forEach(card => {
+    /* Clique */
+    card.addEventListener("click", () => {
+      window.open(card.dataset.videoUrl, "_blank", "noopener,noreferrer");
+    });
+    /* Teclado — acessibilidade */
+    card.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        window.open(card.dataset.videoUrl, "_blank", "noopener,noreferrer");
+      }
+    });
+  });
+}
 
 /**
  * Ao clicar no thumbnail do vídeo principal,
