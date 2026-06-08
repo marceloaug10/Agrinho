@@ -1453,7 +1453,7 @@ function initVideo() {
   if (!thumbBtn || !iframeContainer) return;
 
   /* ID do vídeo YouTube: "Agricultura Sustentável" — Canal Embrapa */
-  const videoId = "RUeYPBjJtjQ";
+  const videoId = "VEVilWrs6kE";
 
   thumbBtn.addEventListener("click", function () {
     /* Cria e injeta o iframe */
