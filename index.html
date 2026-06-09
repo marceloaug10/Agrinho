@@ -1,888 +1,266 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="light">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="EcoAgro — Diagnóstico de Sustentabilidade Rural. Avalie as práticas sustentáveis da sua propriedade." />
-  <meta name="author" content="Concurso Agrinho 2026" />
-  <title>EcoAgro — Diagnóstico de Sustentabilidade Rural</title>
+  <title>EcoAgro Verde — Sustentabilidade no Campo</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-  <!-- ===================== CABEÇALHO GLOBAL ===================== -->
-  <header class="site-header" id="site-header">
-    <div class="header-inner">
-
-      <!-- Logo -->
-      <a href="#" class="logo" id="btn-logo" aria-label="Ir para o início">
-        <span class="logo-icon" aria-hidden="true">🌱</span>
-        <span class="logo-text">Eco<strong>Agro</strong></span>
-      </a>
-
-      <!-- Navegação principal -->
-      <nav class="main-nav" aria-label="Navegação principal">
-        <button class="nav-btn active" data-screen="home" aria-current="page">Início</button>
-        <button class="nav-btn" data-screen="quiz">Diagnóstico</button>
-        <button class="nav-btn" data-screen="result" id="nav-result" disabled aria-disabled="true">Resultado</button>
-        <button class="nav-btn" data-screen="edu">Educação</button>
+  <!-- CABEÇALHO -->
+  <header class="cabecalho">
+    <div class="cabecalho-interno">
+      <a href="#inicio" class="logo">🌿 <span>Eco<strong>Agro</strong> Verde</span></a>
+      <nav class="menu">
+        <a href="#inicio"   class="menu-link ativo">Início</a>
+        <a href="#sobre"    class="menu-link">Sobre</a>
+        <a href="#quiz"     class="menu-link">Diagnóstico</a>
+        <a href="#dicas"    class="menu-link">Dicas</a>
+        <a href="#galeria"  class="menu-link">Galeria</a>
+        <a href="#autores"  class="menu-link">Autores</a>
       </nav>
-
-      <!-- Controles do cabeçalho -->
-      <div class="header-controls">
-        <!-- Toggle Dark Mode -->
-        <button class="btn-darkmode" id="btn-darkmode" aria-label="Alternar modo escuro" title="Dark Mode">
-          <span class="icon-sun" aria-hidden="true">☀️</span>
-          <span class="icon-moon" aria-hidden="true">🌙</span>
-        </button>
-
-        <!-- Menu hambúrguer (mobile) -->
-        <button class="btn-menu" id="btn-menu" aria-label="Abrir menu" aria-expanded="false">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-        </button>
-      </div>
-
+      <button class="btn-hamburger" id="btn-hamburger" aria-label="Abrir menu">☰</button>
+      <button class="btn-darkmode" id="btn-darkmode" aria-label="Alternar modo escuro" title="Dark Mode">🌙</button>
     </div>
-
-    <!-- Menu mobile expandido -->
-    <nav class="mobile-nav" id="mobile-nav" aria-label="Menu mobile" aria-hidden="true">
-      <button class="mobile-nav-btn" data-screen="home">🏠 Início</button>
-      <button class="mobile-nav-btn" data-screen="quiz">📋 Diagnóstico</button>
-      <button class="mobile-nav-btn" data-screen="result" id="mobile-nav-result" disabled>🏆 Resultado</button>
-      <button class="mobile-nav-btn" data-screen="edu">📚 Educação</button>
+    <nav class="menu-mobile" id="menu-mobile">
+      <a href="#inicio"  class="menu-mobile-link">🏠 Início</a>
+      <a href="#sobre"   class="menu-mobile-link">📖 Sobre</a>
+      <a href="#quiz"    class="menu-mobile-link">🌱 Diagnóstico</a>
+      <a href="#dicas"   class="menu-mobile-link">💡 Dicas</a>
+      <a href="#galeria" class="menu-mobile-link">📸 Galeria</a>
+      <a href="#autores" class="menu-mobile-link">👤 Autores</a>
     </nav>
   </header>
 
-  <!-- ===================== MAIN — conteúdo dinâmico ===================== -->
-  <main id="app" role="main">
-
-    <!-- ══════════════════════════════════════════════════
-         TELA 1 — HOME
-    ══════════════════════════════════════════════════ -->
-    <section class="screen screen-home active" id="screen-home" aria-labelledby="home-title">
-
-      <!-- Banner Hero -->
-      <div class="hero">
-        <div class="hero-bg" aria-hidden="true">
-          <!-- Elementos decorativos SVG inline (sem dependências externas) -->
-          <svg class="hero-svg" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-            <defs>
-              <radialGradient id="grad1" cx="30%" cy="50%" r="70%">
-                <stop offset="0%" stop-color="var(--accent-light)" stop-opacity="0.25"/>
-                <stop offset="100%" stop-color="transparent"/>
-              </radialGradient>
-              <radialGradient id="grad2" cx="80%" cy="30%" r="60%">
-                <stop offset="0%" stop-color="var(--accent-2-light)" stop-opacity="0.2"/>
-                <stop offset="100%" stop-color="transparent"/>
-              </radialGradient>
-            </defs>
-            <rect width="1200" height="500" fill="url(#grad1)"/>
-            <rect width="1200" height="500" fill="url(#grad2)"/>
-            <!-- Círculos decorativos -->
-            <circle cx="900" cy="80" r="120" fill="var(--accent)" opacity="0.07"/>
-            <circle cx="150" cy="400" r="90" fill="var(--accent-2)" opacity="0.06"/>
-            <circle cx="600" cy="450" r="60" fill="var(--accent)" opacity="0.05"/>
-          </svg>
-        </div>
-
-        <div class="hero-content">
-          <!-- Badge do concurso -->
-          <div class="hero-badge" aria-label="Concurso Agrinho 2026">
-            <span class="badge-dot" aria-hidden="true"></span>
-            Concurso Agrinho 2026 · Ensino Médio
-          </div>
-
-          <!-- Título principal -->
-          <h1 class="hero-title" id="home-title">
-            <span class="title-highlight">EcoAgro</span>
-            <br>Diagnóstico de
-            <br>Sustentabilidade Rural
-          </h1>
-
-          <!-- Subtítulo / tema -->
-          <p class="hero-subtitle">
-            <em>"Agro forte, futuro sustentável."</em>
-          </p>
-
-          <p class="hero-description">
-            Responda perguntas sobre as práticas da sua propriedade e receba 
-            uma análise personalizada do seu impacto ambiental, com sugestões 
-            concretas para um campo mais verde.
-          </p>
-
-          <!-- CTAs -->
-          <div class="hero-actions">
-            <button class="btn btn-primary btn-large" id="btn-start" data-screen="quiz">
-              <span class="btn-icon" aria-hidden="true">▶</span>
-              Iniciar Diagnóstico
-            </button>
-            <button class="btn btn-ghost btn-large" data-screen="edu">
-              Saber mais
-            </button>
-          </div>
-
-          <!-- Estatísticas rápidas -->
-          <div class="hero-stats" role="list" aria-label="Destaques do diagnóstico">
-            <div class="stat-item" role="listitem">
-              <span class="stat-num">10</span>
-              <span class="stat-label">Perguntas</span>
-            </div>
-            <div class="stat-divider" aria-hidden="true"></div>
-            <div class="stat-item" role="listitem">
-              <span class="stat-num">4</span>
-              <span class="stat-label">Classificações</span>
-            </div>
-            <div class="stat-divider" aria-hidden="true"></div>
-            <div class="stat-item" role="listitem">
-              <span class="stat-num">100%</span>
-              <span class="stat-label">Gratuito</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Ilustração hero (CSS art) -->
-        <div class="hero-illustration" aria-hidden="true">
-          <div class="illus-landscape">
-            <div class="illus-sun"></div>
-            <div class="illus-cloud illus-cloud-1"></div>
-            <div class="illus-cloud illus-cloud-2"></div>
-            <div class="illus-hills">
-              <div class="illus-hill illus-hill-back"></div>
-              <div class="illus-hill illus-hill-front"></div>
-            </div>
-            <div class="illus-trees">
-              <div class="illus-tree illus-tree-1">
-                <div class="tree-top"></div>
-                <div class="tree-trunk"></div>
-              </div>
-              <div class="illus-tree illus-tree-2">
-                <div class="tree-top"></div>
-                <div class="tree-trunk"></div>
-              </div>
-              <div class="illus-tree illus-tree-3">
-                <div class="tree-top"></div>
-                <div class="tree-trunk"></div>
-              </div>
-            </div>
-            <div class="illus-house">
-              <div class="house-roof"></div>
-              <div class="house-body">
-                <div class="house-window"></div>
-                <div class="house-door"></div>
-              </div>
-            </div>
-            <div class="illus-windmill">
-              <div class="windmill-pole"></div>
-              <div class="windmill-blades">
-                <div class="blade blade-1"></div>
-                <div class="blade blade-2"></div>
-                <div class="blade blade-3"></div>
-                <div class="blade blade-4"></div>
-              </div>
-            </div>
-          </div>
-        </div>
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-conteudo">
+      <span class="badge">🏆 Concurso Agrinho 2026 — Ensino Médio</span>
+      <h1>Energia e Resíduos:<br><span class="destaque">O Agro que Cuida</span></h1>
+      <p class="hero-subtitulo">
+        Descubra como o uso de energia limpa e o descarte correto de resíduos
+        estão transformando o campo em um lugar mais sustentável e lucrativo.
+      </p>
+      <div class="hero-botoes">
+        <a href="#quiz"  class="btn btn-principal">Fazer o Diagnóstico ▶</a>
+        <a href="#sobre" class="btn btn-secundario">Saiba Mais</a>
       </div>
-
-      <!-- Seção: como funciona -->
-      <section class="how-it-works" aria-labelledby="how-title">
-        <div class="container">
-          <h2 class="section-title" id="how-title">Como Funciona</h2>
-          <p class="section-subtitle">Três passos simples para conhecer o impacto da sua propriedade</p>
-          <div class="steps-grid">
-
-            <article class="step-card" aria-labelledby="step1-title">
-              <div class="step-number" aria-hidden="true">01</div>
-              <div class="step-icon" aria-hidden="true">
-                <div class="icon-clipboard"></div>
-              </div>
-              <h3 id="step1-title">Responda o Diagnóstico</h3>
-              <p>10 perguntas sobre irrigação, energia, resíduos e preservação ambiental da sua propriedade.</p>
-            </article>
-
-            <article class="step-card" aria-labelledby="step2-title">
-              <div class="step-number" aria-hidden="true">02</div>
-              <div class="step-icon" aria-hidden="true">
-                <div class="icon-chart"></div>
-              </div>
-              <h3 id="step2-title">Receba sua Análise</h3>
-              <p>Veja sua pontuação, classificação e uma análise detalhada dos seus pontos fortes e áreas a melhorar.</p>
-            </article>
-
-            <article class="step-card" aria-labelledby="step3-title">
-              <div class="step-number" aria-hidden="true">03</div>
-              <div class="step-icon" aria-hidden="true">
-                <div class="icon-leaf"></div>
-              </div>
-              <h3 id="step3-title">Evolua com Dicas</h3>
-              <p>Sugestões práticas e conteúdos educativos para tornar sua propriedade cada vez mais sustentável.</p>
-            </article>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- ═══════════════════════════════════════
-           CARROSSEL DE FOTOS
-      ═══════════════════════════════════════ -->
-      <section class="carousel-section" aria-labelledby="carousel-title">
-        <div class="container">
-          <h2 class="section-title" id="carousel-title">O Campo em Imagens</h2>
-          <p class="section-subtitle">A beleza e a força do agro sustentável brasileiro</p>
-        </div>
-
-        <div class="carousel" id="carousel" role="region" aria-label="Galeria de fotos do campo">
-          <div class="carousel-track" id="carousel-track">
-
-            <figure class="carousel-slide">
-              <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=1200&q=80" alt="Campo agrícola verde ao amanhecer com luz dourada" loading="lazy" />
-              <figcaption class="carousel-caption">
-                <span class="caption-tag">🌾 Lavoura</span>
-                <p>Campos férteis — a base de um agro forte e sustentável</p>
-              </figcaption>
-            </figure>
-
-            <figure class="carousel-slide">
-              <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1200&q=80" alt="Trator moderno trabalhando em lavoura" loading="lazy" />
-              <figcaption class="carousel-caption">
-                <span class="caption-tag">🚜 Tecnologia</span>
-                <p>Inovação no campo: tecnologia a serviço da sustentabilidade</p>
-              </figcaption>
-            </figure>
-
-            <figure class="carousel-slide">
-              <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=1200&q=80" alt="Sistema de irrigação por gotejamento em plantação" loading="lazy" />
-              <figcaption class="carousel-caption">
-                <span class="caption-tag">💧 Irrigação</span>
-                <p>Irrigação consciente: cada gota usada com responsabilidade</p>
-              </figcaption>
-            </figure>
-
-            <figure class="carousel-slide">
-              <img src="https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=1200&q=80" alt="Painéis solares em propriedade rural" loading="lazy" />
-              <figcaption class="carousel-caption">
-                <span class="caption-tag">☀️ Energia Solar</span>
-                <p>Energia limpa no campo: reduzindo custos e impacto ambiental</p>
-              </figcaption>
-            </figure>
-
-            <figure class="carousel-slide">
-              <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1200&q=80" alt="Floresta e mata nativa preservada" loading="lazy" />
-              <figcaption class="carousel-caption">
-                <span class="caption-tag">🌳 Preservação</span>
-                <p>Mata nativa preservada: biodiversidade aliada à produção</p>
-              </figcaption>
-            </figure>
-
-            <figure class="carousel-slide">
-              <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&q=80" alt="Horta orgânica com plantas coloridas" loading="lazy" />
-              <figcaption class="carousel-caption">
-                <span class="caption-tag">🌱 Cultivo Orgânico</span>
-                <p>Produção orgânica: saúde para o solo, para o produtor e para o consumidor</p>
-              </figcaption>
-            </figure>
-
-          </div>
-
-          <button class="carousel-btn carousel-btn-prev" id="carousel-prev" aria-label="Foto anterior">&#8249;</button>
-          <button class="carousel-btn carousel-btn-next" id="carousel-next" aria-label="Próxima foto">&#8250;</button>
-          <div class="carousel-dots" id="carousel-dots" role="tablist" aria-label="Selecionar slide"></div>
-        </div>
-      </section>
-
-      <!-- ═══════════════════════════════════════
-           GALERIA EM GRADE
-      ═══════════════════════════════════════ -->
-      <section class="gallery-section" aria-labelledby="gallery-title">
-        <div class="container">
-          <h2 class="section-title" id="gallery-title">Práticas Sustentáveis em Foco</h2>
-          <p class="section-subtitle">Conheça práticas reais que transformam o agronegócio</p>
-
-          <div class="gallery-grid">
-
-            <figure class="gallery-item gallery-item--tall">
-              <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=800&q=80" alt="Agricultor colhendo vegetais frescos em horta orgânica" loading="lazy" />
-              <figcaption><strong>Colheita Orgânica</strong><span>Sem agrotóxicos, com cuidado</span></figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80" alt="Plantas crescendo em canteiro bem cuidado" loading="lazy" />
-              <figcaption><strong>Plantio Direto</strong><span>Solo vivo e produtivo</span></figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <img src="https://images.unsplash.com/photo-1440342359743-84fcb8c21f21?w=600&q=80" alt="Rio limpo cortando mata ciliar preservada" loading="lazy" />
-              <figcaption><strong>Mata Ciliar</strong><span>Água limpa para todos</span></figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <img src="https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=600&q=80" alt="Abelha polinizando flor em área rural" loading="lazy" />
-              <figcaption><strong>Polinizadores</strong><span>Biodiversidade que produz</span></figcaption>
-            </figure>
-
-            <figure class="gallery-item gallery-item--wide">
-              <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=900&q=80" alt="Vista de propriedade rural com áreas verdes preservadas" loading="lazy" />
-              <figcaption><strong>Propriedade Sustentável</strong><span>Produção e preservação em equilíbrio</span></figcaption>
-            </figure>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- ═══════════════════════════════════════
-           VÍDEO EDUCATIVO
-      ═══════════════════════════════════════ -->
-      <section class="video-section" aria-labelledby="video-title">
-        <div class="container">
-          <h2 class="section-title" id="video-title">Assista e Aprenda</h2>
-          <p class="section-subtitle">Entenda como a agricultura sustentável transforma o campo e o futuro</p>
-
-          <div class="video-grid">
-
-            <!-- Vídeo principal (thumbnail clicável, carrega iframe ao clicar) -->
-            <div class="video-main">
-              <div class="video-wrapper" id="video-wrapper">
-                <button class="video-thumb-btn" id="video-thumb-btn" aria-label="Reproduzir vídeo sobre agricultura sustentável">
-                  <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?w=900&q=80" alt="Campo agrícola ao pôr do sol — clique para assistir" class="video-thumb-img" loading="lazy" />
-                  <div class="video-play-overlay" aria-hidden="true">
-                    <div class="video-play-btn">
-                      <span class="play-triangle">▶</span>
-                    </div>
-                    <div class="video-play-label">Assistir ao vídeo</div>
-                  </div>
-                </button>
-                <div class="video-iframe-container" id="video-iframe-container" aria-hidden="true"></div>
-              </div>
-              <div class="video-info">
-                <h3>Agricultura Sustentável no Brasil</h3>
-                <p>Descubra como produtores rurais brasileiros estão adotando práticas que aumentam a produtividade e preservam o meio ambiente.</p>
-              </div>
-            </div>
-
-            <!-- Cards de vídeos relacionados -->
-            <div class="video-side">
-
-              <article class="video-card" aria-labelledby="vid1-title" data-video-url="https://www.youtube.com/watch?v=4r7ICPWLNiY" tabindex="0" role="button" aria-label="Assistir: Energia Solar na Fazenda no YouTube">
-                <div class="video-card-thumb">
-                  <img src="https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=400&q=80" alt="Painel solar em fazenda" loading="lazy" />
-                  <span class="video-card-duration">8:24</span>
-                </div>
-                <div class="video-card-info">
-                  <h4 id="vid1-title">Energia Solar na Fazenda</h4>
-                  <p>Globo Rural: agricultores investem em energia fotovoltaica</p>
-                </div>
-              </article>
-
-              <article class="video-card" aria-labelledby="vid2-title" data-video-url="https://www.youtube.com/watch?v=OAV3S4uULhE" tabindex="0" role="button" aria-label="Assistir: Irrigação Inteligente no YouTube">
-                <div class="video-card-thumb">
-                  <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=400&q=80" alt="Irrigação por gotejamento" loading="lazy" />
-                  <span class="video-card-duration">12:10</span>
-                </div>
-                <div class="video-card-info">
-                  <h4 id="vid2-title">Irrigação Inteligente</h4>
-                  <p>Como funciona irrigação na fazenda com gotejamento</p>
-                </div>
-              </article>
-
-              <article class="video-card" aria-labelledby="vid3-title" data-video-url="https://www.youtube.com/watch?v=Litjil8S0X4" tabindex="0" role="button" aria-label="Assistir: Preservar para Produzir no YouTube">
-                <div class="video-card-thumb">
-                  <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=400&q=80" alt="Floresta preservada" loading="lazy" />
-                  <span class="video-card-duration">6:45</span>
-                </div>
-                <div class="video-card-info">
-                  <h4 id="vid3-title">Preservar para Produzir</h4>
-                  <p>Embrapa: floresta preservada é floresta produtiva</p>
-                </div>
-              </article>
-
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Rodapé da home: tema do concurso -->
-      <aside class="theme-banner" aria-label="Tema do Concurso Agrinho 2026">
-        <div class="container">
-          <div class="theme-banner-inner">
-            <span class="theme-icon" aria-hidden="true">🏆</span>
-            <div>
-              <strong>Concurso Agrinho 2026 — Subcategoria 3 · Ensino Médio</strong>
-              <p>Tema: <em>Agro forte, futuro sustentável</em> — promovendo consciência ambiental no campo.</p>
-            </div>
-          </div>
-        </div>
-      </aside>
-
-    </section>
-    <!-- /TELA 1 -->
-
-
-    <!-- ══════════════════════════════════════════════════
-         TELA 2 — QUESTIONÁRIO
-    ══════════════════════════════════════════════════ -->
-    <section class="screen screen-quiz" id="screen-quiz" aria-labelledby="quiz-title" aria-live="polite">
-
-      <div class="container container-quiz">
-
-        <!-- Cabeçalho do quiz -->
-        <header class="quiz-header">
-          <h2 class="quiz-main-title" id="quiz-title">Diagnóstico de Sustentabilidade</h2>
-          <p class="quiz-subtitle">Responda honestamente sobre as práticas da sua propriedade rural.</p>
-        </header>
-
-        <!-- Barra de progresso -->
-        <div class="progress-wrapper" role="group" aria-labelledby="progress-label">
-          <div class="progress-info">
-            <span id="progress-label">Progresso</span>
-            <span id="progress-text" aria-live="polite">Pergunta 1 de 10</span>
-          </div>
-          <div class="progress-bar-track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Progresso do questionário">
-            <div class="progress-bar-fill" id="progress-fill"></div>
-          </div>
-          <div class="progress-steps" id="progress-steps" aria-hidden="true">
-            <!-- Gerado via JS -->
-          </div>
-        </div>
-
-        <!-- Card da pergunta -->
-        <div class="question-card" id="question-card" role="group" aria-labelledby="question-text">
-          <div class="question-category" id="question-category" aria-label="Categoria da pergunta"></div>
-          <h3 class="question-text" id="question-text"></h3>
-
-          <!-- Opções de resposta -->
-          <fieldset class="options-fieldset" id="options-fieldset">
-            <legend class="sr-only">Escolha uma opção</legend>
-            <div class="options-grid" id="options-grid" role="radiogroup" aria-labelledby="question-text">
-              <!-- Gerado via JS -->
-            </div>
-          </fieldset>
-
-          <!-- Feedback após resposta -->
-          <div class="answer-feedback" id="answer-feedback" aria-live="polite" aria-atomic="true">
-            <div class="feedback-icon" id="feedback-icon" aria-hidden="true"></div>
-            <p class="feedback-text" id="feedback-text"></p>
-          </div>
-        </div>
-
-        <!-- Navegação do quiz -->
-        <div class="quiz-nav" role="group" aria-label="Navegação do questionário">
-          <button class="btn btn-ghost" id="btn-prev" disabled aria-label="Pergunta anterior">
-            ← Anterior
-          </button>
-          <div class="quiz-counter" aria-hidden="true">
-            <span id="current-q-num">1</span> / <span id="total-q-num">10</span>
-          </div>
-          <button class="btn btn-primary" id="btn-next" disabled aria-label="Próxima pergunta">
-            Próxima →
-          </button>
-        </div>
-
-        <!-- Botão finalizar (aparece na última pergunta) -->
-        <div class="quiz-finish" id="quiz-finish" aria-hidden="true">
-          <button class="btn btn-primary btn-large btn-finish" id="btn-finish" disabled>
-            <span aria-hidden="true">🌿</span> Ver Meu Resultado
-          </button>
-        </div>
-
-      </div>
-    </section>
-    <!-- /TELA 2 -->
-
-
-    <!-- ══════════════════════════════════════════════════
-         TELA 3 — RESULTADO
-    ══════════════════════════════════════════════════ -->
-    <section class="screen screen-result" id="screen-result" aria-labelledby="result-title">
-
-      <div class="container container-result">
-
-        <!-- Cabeçalho resultado -->
-        <header class="result-header">
-          <p class="result-date" id="result-date" aria-label="Data do diagnóstico"></p>
-          <h2 class="result-main-title" id="result-title">Seu Diagnóstico</h2>
-        </header>
-
-        <!-- Card de pontuação principal -->
-        <div class="score-card" id="score-card" aria-labelledby="score-classification">
-          <div class="score-visual">
-            <!-- Gráfico circular CSS -->
-            <div class="score-circle" id="score-circle" role="img" aria-labelledby="score-num score-label">
-              <svg class="circle-svg" viewBox="0 0 120 120" aria-hidden="true">
-                <circle class="circle-bg" cx="60" cy="60" r="50"/>
-                <circle class="circle-progress" id="circle-progress" cx="60" cy="60" r="50"/>
-              </svg>
-              <div class="score-inner">
-                <span class="score-num" id="score-num" aria-live="polite">0</span>
-                <span class="score-label" id="score-label">pontos</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="score-info">
-            <div class="classification-badge" id="classification-badge" aria-label="Classificação">
-              <span class="badge-emoji" id="badge-emoji" aria-hidden="true"></span>
-              <span class="badge-name" id="score-classification" aria-live="polite"></span>
-            </div>
-            <h3 class="score-message" id="score-message"></h3>
-            <p class="score-description" id="score-description"></p>
-          </div>
-        </div>
-
-        <!-- Grid de análise detalhada -->
-        <div class="result-grid">
-
-          <!-- Pontos fortes -->
-          <article class="result-card result-strengths" aria-labelledby="strengths-title">
-            <header class="result-card-header">
-              <div class="result-card-icon result-card-icon--green" aria-hidden="true">✓</div>
-              <h3 id="strengths-title">Pontos Fortes</h3>
-            </header>
-            <ul class="result-list" id="strengths-list" aria-label="Seus pontos fortes">
-              <!-- Gerado via JS -->
-            </ul>
-          </article>
-
-          <!-- Melhorias recomendadas -->
-          <article class="result-card result-improvements" aria-labelledby="improvements-title">
-            <header class="result-card-header">
-              <div class="result-card-icon result-card-icon--amber" aria-hidden="true">!</div>
-              <h3 id="improvements-title">Melhorias Recomendadas</h3>
-            </header>
-            <ul class="result-list" id="improvements-list" aria-label="Melhorias recomendadas">
-              <!-- Gerado via JS -->
-            </ul>
-          </article>
-
-          <!-- Sugestões práticas -->
-          <article class="result-card result-suggestions" aria-labelledby="suggestions-title">
-            <header class="result-card-header">
-              <div class="result-card-icon result-card-icon--blue" aria-hidden="true">→</div>
-              <h3 id="suggestions-title">Próximas Ações</h3>
-            </header>
-            <ul class="result-list" id="suggestions-list" aria-label="Sugestões de próximas ações">
-              <!-- Gerado via JS -->
-            </ul>
-          </article>
-
-          <!-- Breakdown por categoria -->
-          <article class="result-card result-breakdown" aria-labelledby="breakdown-title">
-            <header class="result-card-header">
-              <div class="result-card-icon result-card-icon--purple" aria-hidden="true">≡</div>
-              <h3 id="breakdown-title">Desempenho por Área</h3>
-            </header>
-            <div class="breakdown-bars" id="breakdown-bars" role="list" aria-label="Desempenho por área">
-              <!-- Gerado via JS -->
-            </div>
-          </article>
-
-        </div>
-
-        <!-- Ações pós-resultado -->
-        <div class="result-actions" role="group" aria-label="Ações pós-diagnóstico">
-          <button class="btn btn-primary btn-large" id="btn-restart" aria-label="Reiniciar diagnóstico">
-            <span aria-hidden="true">↺</span> Reiniciar Avaliação
-          </button>
-          <button class="btn btn-secondary btn-large" data-screen="edu" aria-label="Ver conteúdos educativos">
-            <span aria-hidden="true">📚</span> Aprender Mais
-          </button>
-          <button class="btn btn-ghost btn-large" id="btn-share" aria-label="Compartilhar resultado">
-            <span aria-hidden="true">↗</span> Compartilhar
-          </button>
-        </div>
-
-        <!-- Histórico de avaliações -->
-        <div class="history-section" id="history-section" aria-labelledby="history-title">
-          <h3 id="history-title">Histórico de Avaliações</h3>
-          <div class="history-list" id="history-list" role="list" aria-label="Histórico de avaliações anteriores">
-            <!-- Gerado via JS -->
-          </div>
-          <button class="btn btn-ghost btn-small" id="btn-clear-history" aria-label="Limpar histórico">
-            Limpar histórico
-          </button>
-        </div>
-
-      </div>
-    </section>
-    <!-- /TELA 3 -->
-
-
-    <!-- ══════════════════════════════════════════════════
-         TELA 4 — EDUCAÇÃO AMBIENTAL
-    ══════════════════════════════════════════════════ -->
-    <section class="screen screen-edu" id="screen-edu" aria-labelledby="edu-title">
-
-      <div class="container">
-
-        <!-- Cabeçalho educação -->
-        <header class="edu-header">
-          <div class="edu-badge" aria-hidden="true">🌍</div>
-          <h2 class="edu-main-title" id="edu-title">Educação Ambiental</h2>
-          <p class="edu-subtitle">Conteúdos para um agro mais verde e sustentável</p>
-        </header>
-
-        <!-- Filtros de categoria -->
-        <nav class="edu-filters" aria-label="Filtrar por tema">
-          <button class="filter-btn active" data-filter="all">Todos</button>
-          <button class="filter-btn" data-filter="water">💧 Água</button>
-          <button class="filter-btn" data-filter="energy">⚡ Energia</button>
-          <button class="filter-btn" data-filter="soil">🌱 Solo</button>
-          <button class="filter-btn" data-filter="fauna">🦋 Fauna</button>
-        </nav>
-
-        <!-- Grade de cards educativos -->
-        <div class="edu-grid" id="edu-grid" role="list" aria-label="Conteúdos educativos">
-
-          <!-- Card: Irrigação Consciente -->
-          <article class="edu-card" data-category="water" role="listitem" aria-labelledby="edu1-title">
-            <div class="edu-card-cover edu-cover--water">
-              <div class="edu-cover-icon" aria-hidden="true">💧</div>
-              <div class="edu-cover-tag">Água</div>
-            </div>
-            <div class="edu-card-body">
-              <h3 id="edu1-title">Irrigação Consciente</h3>
-              <p>A irrigação eficiente pode reduzir o consumo de água em até 50%. Técnicas como gotejamento e microaspersão entregam água direto às raízes, sem desperdício.</p>
-              <ul class="edu-tips" aria-label="Dicas de irrigação consciente">
-                <li>Irrigue no início da manhã ou ao entardecer</li>
-                <li>Use sensores de umidade do solo</li>
-                <li>Prefira sistemas de gotejamento</li>
-                <li>Monitore e repare vazamentos regularmente</li>
-              </ul>
-              <div class="edu-impact">
-                <span class="impact-label">Impacto potencial:</span>
-                <div class="impact-bar" aria-label="Impacto potencial alto">
-                  <div class="impact-fill" style="width:85%"></div>
-                </div>
-                <span class="impact-value">Alto</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card: Captação de Água da Chuva -->
-          <article class="edu-card" data-category="water" role="listitem" aria-labelledby="edu2-title">
-            <div class="edu-card-cover edu-cover--water2">
-              <div class="edu-cover-icon" aria-hidden="true">🌧️</div>
-              <div class="edu-cover-tag">Água</div>
-            </div>
-            <div class="edu-card-body">
-              <h3 id="edu2-title">Reaproveitamento de Água</h3>
-              <p>Cisternas, barragens e sistemas de coleta de água pluvial garantem acesso à água em períodos de seca e reduzem a dependência de fontes externas.</p>
-              <ul class="edu-tips" aria-label="Dicas de reaproveitamento de água">
-                <li>Instale cisternas calçadão ou calha</li>
-                <li>Construa pequenas barragens de contenção</li>
-                <li>Reutilize água de processos agroindustriais</li>
-                <li>Plante espécies que reduzem erosão e retêm água</li>
-              </ul>
-              <div class="edu-impact">
-                <span class="impact-label">Impacto potencial:</span>
-                <div class="impact-bar" aria-label="Impacto potencial muito alto">
-                  <div class="impact-fill" style="width:90%"></div>
-                </div>
-                <span class="impact-value">Muito Alto</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card: Energia Solar -->
-          <article class="edu-card" data-category="energy" role="listitem" aria-labelledby="edu3-title">
-            <div class="edu-card-cover edu-cover--energy">
-              <div class="edu-cover-icon" aria-hidden="true">☀️</div>
-              <div class="edu-cover-tag">Energia</div>
-            </div>
-            <div class="edu-card-body">
-              <h3 id="edu3-title">Energia Solar no Campo</h3>
-              <p>O Brasil tem um dos maiores índices de irradiação solar do mundo. Propriedades rurais podem usar energia fotovoltaica para bombas, iluminação e até vender excedente à rede.</p>
-              <ul class="edu-tips" aria-label="Dicas de energia solar">
-                <li>Sistemas fotovoltaicos se pagam em 4 a 7 anos</li>
-                <li>Bombas solares eliminam custos com combustível</li>
-                <li>Energia eólica complementa dias nublados</li>
-                <li>Programas governamentais financiam instalação</li>
-              </ul>
-              <div class="edu-impact">
-                <span class="impact-label">Impacto potencial:</span>
-                <div class="impact-bar" aria-label="Impacto potencial muito alto">
-                  <div class="impact-fill" style="width:92%"></div>
-                </div>
-                <span class="impact-value">Muito Alto</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card: Bioenergia -->
-          <article class="edu-card" data-category="energy" role="listitem" aria-labelledby="edu4-title">
-            <div class="edu-card-cover edu-cover--energy2">
-              <div class="edu-cover-icon" aria-hidden="true">🔋</div>
-              <div class="edu-cover-tag">Energia</div>
-            </div>
-            <div class="edu-card-body">
-              <h3 id="edu4-title">Bioenergia e Biogás</h3>
-              <p>O biogás produzido a partir de dejetos animais e restos vegetais é uma fonte renovável que pode substituir GLP e diesel, reduzindo custos e emissões.</p>
-              <ul class="edu-tips" aria-label="Dicas de bioenergia">
-                <li>Biodigestores transformam resíduos em energia</li>
-                <li>O biofertilizante gerado enriquece o solo</li>
-                <li>Pequenas propriedades podem implementar sistemas simples</li>
-                <li>Reduz odores e contaminação de mananciais</li>
-              </ul>
-              <div class="edu-impact">
-                <span class="impact-label">Impacto potencial:</span>
-                <div class="impact-bar" aria-label="Impacto potencial alto">
-                  <div class="impact-fill" style="width:78%"></div>
-                </div>
-                <span class="impact-value">Alto</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card: Preservação do Solo -->
-          <article class="edu-card" data-category="soil" role="listitem" aria-labelledby="edu5-title">
-            <div class="edu-card-cover edu-cover--soil">
-              <div class="edu-cover-icon" aria-hidden="true">🌱</div>
-              <div class="edu-cover-tag">Solo</div>
-            </div>
-            <div class="edu-card-body">
-              <h3 id="edu5-title">Manejo Sustentável do Solo</h3>
-              <p>O plantio direto, o terraceamento e a adubação orgânica preservam a estrutura e a fertilidade do solo, aumentando a produtividade a longo prazo.</p>
-              <ul class="edu-tips" aria-label="Dicas de manejo do solo">
-                <li>Plante culturas de cobertura no entre-safra</li>
-                <li>Pratique rotação de culturas</li>
-                <li>Compostagem reduz o uso de fertilizantes químicos</li>
-                <li>Terraceamento controla erosão em áreas inclinadas</li>
-              </ul>
-              <div class="edu-impact">
-                <span class="impact-label">Impacto potencial:</span>
-                <div class="impact-bar" aria-label="Impacto potencial alto">
-                  <div class="impact-fill" style="width:80%"></div>
-                </div>
-                <span class="impact-value">Alto</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card: Preservação de Áreas Verdes -->
-          <article class="edu-card" data-category="fauna" role="listitem" aria-labelledby="edu6-title">
-            <div class="edu-card-cover edu-cover--fauna">
-              <div class="edu-cover-icon" aria-hidden="true">🦋</div>
-              <div class="edu-cover-tag">Fauna &amp; Flora</div>
-            </div>
-            <div class="edu-card-body">
-              <h3 id="edu6-title">Preservação Ambiental</h3>
-              <p>As Áreas de Preservação Permanente (APPs) e Reservas Legais são obrigações do Código Florestal e essenciais para manter a biodiversidade e os recursos hídricos.</p>
-              <ul class="edu-tips" aria-label="Dicas de preservação ambiental">
-                <li>Mantenha mata ciliar nas margens de cursos d'água</li>
-                <li>Cadastre sua propriedade no CAR</li>
-                <li>Corredores ecológicos protegem a fauna</li>
-                <li>Árvores nativas atraem polinizadores e aumentam produção</li>
-              </ul>
-              <div class="edu-impact">
-                <span class="impact-label">Impacto potencial:</span>
-                <div class="impact-bar" aria-label="Impacto potencial muito alto">
-                  <div class="impact-fill" style="width:95%"></div>
-                </div>
-                <span class="impact-value">Muito Alto</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card: Gestão de Resíduos -->
-          <article class="edu-card" data-category="soil" role="listitem" aria-labelledby="edu7-title">
-            <div class="edu-card-cover edu-cover--waste">
-              <div class="edu-cover-icon" aria-hidden="true">♻️</div>
-              <div class="edu-cover-tag">Solo</div>
-            </div>
-            <div class="edu-card-body">
-              <h3 id="edu7-title">Gestão de Resíduos</h3>
-              <p>O descarte incorreto de embalagens de agrotóxicos, pneus e lixo eletrônico contamina o solo e a água. O descarte correto é lei e protege a saúde rural.</p>
-              <ul class="edu-tips" aria-label="Dicas de gestão de resíduos">
-                <li>Devolva embalagens de agrotóxicos nos postos credenciados</li>
-                <li>Faça compostagem de resíduos orgânicos</li>
-                <li>Separe o lixo para coleta seletiva</li>
-                <li>Evite queimadas — é crime ambiental</li>
-              </ul>
-              <div class="edu-impact">
-                <span class="impact-label">Impacto potencial:</span>
-                <div class="impact-bar" aria-label="Impacto potencial médio">
-                  <div class="impact-fill" style="width:70%"></div>
-                </div>
-                <span class="impact-value">Médio</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card: Biodiversidade -->
-          <article class="edu-card" data-category="fauna" role="listitem" aria-labelledby="edu8-title">
-            <div class="edu-card-cover edu-cover--bio">
-              <div class="edu-cover-icon" aria-hidden="true">🌿</div>
-              <div class="edu-cover-tag">Fauna &amp; Flora</div>
-            </div>
-            <div class="edu-card-body">
-              <h3 id="edu8-title">Biodiversidade Funcional</h3>
-              <p>A integração lavoura-pecuária-floresta (iLPF) combina cultivos, pastagens e árvores, otimizando o uso da terra e aumentando a biodiversidade local.</p>
-              <ul class="edu-tips" aria-label="Dicas de biodiversidade funcional">
-                <li>Sistemas agroflorestais geram renda e conservam</li>
-                <li>Polinizadores nativos aumentam produtividade</li>
-                <li>Controle biológico de pragas reduz agrotóxicos</li>
-                <li>Cercas vivas protegem e criam corredores</li>
-              </ul>
-              <div class="edu-impact">
-                <span class="impact-label">Impacto potencial:</span>
-                <div class="impact-bar" aria-label="Impacto potencial alto">
-                  <div class="impact-fill" style="width:82%"></div>
-                </div>
-                <span class="impact-value">Alto</span>
-              </div>
-            </div>
-          </article>
-
-        </div>
-        <!-- /edu-grid -->
-
-        <!-- CTA final educação -->
-        <div class="edu-cta">
-          <p>Pronto para descobrir o nível de sustentabilidade da sua propriedade?</p>
-          <button class="btn btn-primary btn-large" data-screen="quiz">
-            <span aria-hidden="true">▶</span> Fazer o Diagnóstico
-          </button>
-        </div>
-
-      </div>
-    </section>
-    <!-- /TELA 4 -->
-
-  </main>
-  <!-- /app -->
-
-
-  <!-- ===================== RODAPÉ GLOBAL ===================== -->
-  <footer class="site-footer" role="contentinfo">
+    </div>
+    <div class="hero-visual">
+      <img
+        src="https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=700&q=80"
+        alt="Painéis solares em propriedade rural com campo verde ao fundo"
+      />
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="secao bg-clara" id="sobre">
     <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <span class="logo-icon" aria-hidden="true">🌱</span>
-          <span class="logo-text">Eco<strong>Agro</strong></span>
-          <p>Diagnóstico de Sustentabilidade Rural</p>
+      <h2 class="titulo-secao">Por que Energia e Resíduos?</h2>
+      <p class="sub-secao">Dois temas que definem o futuro do agronegócio brasileiro</p>
+      <div class="sobre-grid">
+        <div class="sobre-texto">
+          <p>O Brasil tem um dos maiores potenciais de energia solar e eólica do mundo. Ao mesmo tempo, o descarte incorreto de resíduos agrícolas ainda é um dos maiores problemas ambientais do campo.</p>
+          <p>Este projeto, criado para o <strong>Concurso Agrinho 2026</strong>, mostra como energia limpa e gestão de resíduos andam juntas na construção de um campo mais forte e sustentável.</p>
+          <p><em>"Agro forte, futuro sustentável."</em></p>
         </div>
-        <div class="footer-info">
-          <p><strong>Concurso Agrinho 2026</strong></p>
-          <p>Subcategoria 3 — Ensino Médio</p>
-          <p>Tema: Agro forte, futuro sustentável</p>
-        </div>
-        <div class="footer-nav" role="navigation" aria-label="Rodapé">
-          <button class="footer-link" data-screen="home">Início</button>
-          <button class="footer-link" data-screen="quiz">Diagnóstico</button>
-          <button class="footer-link" data-screen="edu">Educação</button>
+        <div class="sobre-cards">
+          <div class="mini-card">
+            <span>☀️</span>
+            <strong>+700 mil</strong>
+            <p>propriedades rurais com energia solar no Brasil</p>
+          </div>
+          <div class="mini-card">
+            <span>♻️</span>
+            <strong>60%</strong>
+            <p>dos resíduos agrícolas podem virar adubo ou energia</p>
+          </div>
+          <div class="mini-card">
+            <span>💰</span>
+            <strong>40%</strong>
+            <p>de redução nos custos com energia ao usar solar</p>
+          </div>
+          <div class="mini-card">
+            <span>🌡️</span>
+            <strong>-30%</strong>
+            <p>de emissões de CO₂ com biogás no lugar do diesel</p>
+          </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>© 2026 EcoAgro — Projeto desenvolvido para o Concurso Agrinho.</p>
+    </div>
+  </section>
+
+  <!-- QUIZ / DIAGNÓSTICO -->
+  <section class="secao bg-verde" id="quiz">
+    <div class="container">
+      <h2 class="titulo-secao branco">Diagnóstico de Energia e Resíduos</h2>
+      <p class="sub-secao branco">Responda 8 perguntas e descubra o nível da sua propriedade</p>
+
+      <!-- Caixa do quiz -->
+      <div class="quiz-box" id="quiz-box">
+        <div class="quiz-topo">
+          <span id="num-pergunta">Pergunta 1 de 8</span>
+          <div class="progresso-track">
+            <div class="progresso-fill" id="progresso-fill"></div>
+          </div>
+        </div>
+        <p class="quiz-texto" id="quiz-texto"></p>
+        <div class="quiz-opcoes" id="quiz-opcoes"></div>
+        <div class="quiz-feedback" id="quiz-feedback"></div>
+        <div class="quiz-nav">
+          <button class="btn btn-principal" id="btn-avancar" style="display:none">Próxima →</button>
+        </div>
       </div>
+
+      <!-- Resultado -->
+      <div class="quiz-resultado" id="quiz-resultado" style="display:none">
+        <div class="resultado-icone" id="resultado-icone"></div>
+        <h3 id="resultado-classe"></h3>
+        <p  id="resultado-msg"></p>
+        <div class="resultado-pontos">
+          <strong id="resultado-pts"></strong> pontos de 80
+        </div>
+        <ul class="resultado-dicas" id="resultado-dicas"></ul>
+        <button class="btn btn-secundario" id="btn-reiniciar">↺ Reiniciar</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DICAS -->
+  <section class="secao" id="dicas">
+    <div class="container">
+      <h2 class="titulo-secao">Dicas Práticas</h2>
+      <p class="sub-secao">O que você pode fazer hoje pela sustentabilidade</p>
+      <div class="dicas-grid">
+
+        <article class="dica-card">
+          <div class="dica-topo dica-solar">
+            <span>☀️</span>
+            <h3>Energia Solar</h3>
+          </div>
+          <ul>
+            <li>Instale painéis fotovoltaicos — se pagam em 4 a 7 anos</li>
+            <li>Use bombas solares para irrigação</li>
+            <li>Venda o excedente de energia para a rede elétrica</li>
+            <li>Consulte programas do governo para financiamento</li>
+          </ul>
+        </article>
+
+        <article class="dica-card">
+          <div class="dica-topo dica-biogas">
+            <span>🔋</span>
+            <h3>Biogás e Biofertilizante</h3>
+          </div>
+          <ul>
+            <li>Biodigestores transformam dejetos animais em energia</li>
+            <li>O biofertilizante produzido substitui adubos químicos</li>
+            <li>Pequenas propriedades também podem instalar</li>
+            <li>Reduz odores e melhora o ambiente da fazenda</li>
+          </ul>
+        </article>
+
+        <article class="dica-card">
+          <div class="dica-topo dica-residuos">
+            <span>♻️</span>
+            <h3>Resíduos Agrícolas</h3>
+          </div>
+          <ul>
+            <li>Devolva embalagens de agrotóxico nos postos certos</li>
+            <li>Faça compostagem dos resíduos orgânicos</li>
+            <li>Nunca queime resíduos — é crime ambiental</li>
+            <li>Pneus velhos têm descarte específico e gratuito</li>
+          </ul>
+        </article>
+
+        <article class="dica-card">
+          <div class="dica-topo dica-eolica">
+            <span>💨</span>
+            <h3>Energia Eólica</h3>
+          </div>
+          <ul>
+            <li>Regiões de vento constante têm grande potencial</li>
+            <li>Mini aerogeradores atendem pequenas propriedades</li>
+            <li>Combina bem com solar para geração contínua</li>
+            <li>Zero emissões e custo de manutenção muito baixo</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section class="secao bg-clara" id="galeria">
+    <div class="container">
+      <h2 class="titulo-secao">Galeria</h2>
+      <p class="sub-secao">Energia limpa e resíduos bem gerenciados em imagens</p>
+      <div class="galeria-grid">
+        <figure class="galeria-foto">
+          <img src="https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=600&q=80" alt="Painéis solares em fazenda" loading="lazy" />
+          <figcaption>Energia solar no campo</figcaption>
+        </figure>
+        <figure class="galeria-foto">
+          <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=600&q=80" alt="Irrigação por gotejamento" loading="lazy" />
+          <figcaption>Irrigação eficiente</figcaption>
+        </figure>
+        <figure class="galeria-foto">
+          <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600&q=80" alt="Floresta preservada" loading="lazy" />
+          <figcaption>Natureza preservada</figcaption>
+        </figure>
+        <figure class="galeria-foto">
+          <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=600&q=80" alt="Campo agrícola verde" loading="lazy" />
+          <figcaption>Campo sustentável</figcaption>
+        </figure>
+        <figure class="galeria-foto">
+          <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=600&q=80" alt="Colheita orgânica" loading="lazy" />
+          <figcaption>Colheita orgânica</figcaption>
+        </figure>
+        <figure class="galeria-foto">
+          <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&q=80" alt="Agricultura moderna" loading="lazy" />
+          <figcaption>Tecnologia no campo</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTORES -->
+  <section class="secao" id="autores">
+    <div class="container">
+      <h2 class="titulo-secao">Sobre os Autores</h2>
+      <p class="sub-secao">Quem criou este projeto</p>
+      <!--
+        ⚠️ PERSONALIZE AQUI:
+        Troque pelas suas informações reais!
+      -->
+      <div class="autores-box">
+        <div class="autor-item"><span>👤</span><div><strong>Autora</strong><p>Seu Nome Aqui</p></div></div>
+        <div class="autor-item"><span>🏫</span><div><strong>Escola</strong><p>Nome da Escola</p></div></div>
+        <div class="autor-item"><span>📍</span><div><strong>Cidade</strong><p>Sua Cidade — PR</p></div></div>
+        <div class="autor-item"><span>👩‍🏫</span><div><strong>Orientador(a)</strong><p>Nome do Professor(a)</p></div></div>
+        <div class="autor-mensagem">
+          <!--
+            ⚠️ ESCREVA COM SUAS PALAVRAS:
+            Conte por que você escolheu esse tema!
+          -->
+          <h3>Nossa Mensagem</h3>
+          <p>"Escolhemos falar sobre energia e resíduos porque são problemas que vemos no dia a dia do campo. Com informação e atitude, o agro pode ser mais limpo, mais barato e mais sustentável."</p>
+          <p>— <em>Autoras, Agrinho 2026</em></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer class="rodape">
+    <div class="container">
+      <p>🌿 <strong>EcoAgro Verde</strong> — Concurso Agrinho 2026 · Subcategoria 3 · Ensino Médio</p>
+      <p><em>"Agro forte, futuro sustentável"</em></p>
     </div>
   </footer>
 
-  <!-- Toast de notificação -->
-  <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
-
-  <!-- Script principal -->
   <script src="js/script.js"></script>
 </body>
 </html>
